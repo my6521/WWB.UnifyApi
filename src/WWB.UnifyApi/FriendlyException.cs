@@ -33,12 +33,6 @@ namespace WWB.UnifyApi
             ErrorCode = errorCode;
         }
 
-        public static FriendlyException Of<T>(T errorCode) where T : Enum
-        {
-            var error = errorCode.HandleCode();
-            return new FriendlyException(error.Item1, error.Item2);
-        }
-
         public static FriendlyException Of<T>(T errorCode, params string[] formatTexts) where T : Enum
         {
             var error = errorCode.HandleCode();
