@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AD9AD37E-2BF6-477E-8AC6-F6411C97EBD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{B7B56C1D-4564-41FD-B704-6F5F1BB7F2E3}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WWB.UnifyApi", "src\WWB.UnifyApi\WWB.UnifyApi.csproj", "{75CC586A-F920-49ED-91B5-49C4B3831485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WWB.UnifyApi.Tests", "src\WWB.UnifyApi.Tests\WWB.UnifyApi.Tests.csproj", "{951FD004-5231-4ECF-AFBD-58C400DA8C09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75CC586A-F920-49ED-91B5-49C4B3831485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CC586A-F920-49ED-91B5-49C4B3831485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CC586A-F920-49ED-91B5-49C4B3831485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CC586A-F920-49ED-91B5-49C4B3831485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951FD004-5231-4ECF-AFBD-58C400DA8C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951FD004-5231-4ECF-AFBD-58C400DA8C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951FD004-5231-4ECF-AFBD-58C400DA8C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951FD004-5231-4ECF-AFBD-58C400DA8C09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75CC586A-F920-49ED-91B5-49C4B3831485} = {AD9AD37E-2BF6-477E-8AC6-F6411C97EBD7}
+		{951FD004-5231-4ECF-AFBD-58C400DA8C09} = {AD9AD37E-2BF6-477E-8AC6-F6411C97EBD7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0D9C367-85A7-4DA0-996F-2BC42273BD77}
+	EndGlobalSection
+EndGlobal
