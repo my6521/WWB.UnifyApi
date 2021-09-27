@@ -23,12 +23,12 @@ namespace WWB.UnifyApi
         {
         }
 
-        public FriendlyException(object errorCode, string message) : base(message)
+        public FriendlyException(int errorCode, string message) : base(message)
         {
             ErrorCode = errorCode;
         }
 
-        public FriendlyException(object errorCode, string message, Exception innerException) : base(message, innerException)
+        public FriendlyException(int errorCode, string message, Exception innerException) : base(message, innerException)
         {
             ErrorCode = errorCode;
         }
