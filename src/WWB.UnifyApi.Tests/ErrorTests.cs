@@ -20,7 +20,14 @@ namespace WWB.UnifyApi.Tests
         [Fact]
         public void TestWithFormat()
         {
-            throw FriendlyException.Of(Errors.TestWithFormat, "aaaa", "dddd");
+            try
+            {
+                throw FriendlyException.Of(Errors.TestWithFormat, "aaaa", "dddd");
+            }
+            catch
+            {
+                throw FriendlyException.Of(Errors.TestWithFormat, "aaaa", "dddd");
+            }
         }
     }
 }
