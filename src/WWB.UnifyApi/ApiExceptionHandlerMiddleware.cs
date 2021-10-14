@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 using WWB.UnifyApi.Models;
 
@@ -81,7 +78,7 @@ namespace WWB.UnifyApi
         {
             context.Response.Clear();
             context.Response.ContentType = "application/json;charset=utf-8";
-            await context.Response.WriteAsync(JsonSerializer.Serialize(errorResult));
+            await context.Response.WriteAsync(JsonConvert.SerializeObject(errorResult));
         }
     }
 }
