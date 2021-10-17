@@ -36,8 +36,8 @@ namespace WWB.UnifyApi.Converter
             }
 
             var cValue = value.ToString();
-            //长度大于等于19位的ID才返回String
-            if (cValue != null && (cValue.Length >= 15 || writer.Path.ToLower().Contains("id")))
+            //长度大于等于15位的ID才返回String
+            if (cValue != null && (cValue.Length >= 15))
             {
                 writer.WriteValue(cValue);
             }
