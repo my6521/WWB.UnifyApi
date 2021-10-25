@@ -31,47 +31,30 @@ namespace WWB.UnifyApi
             }
             finally
             {
-                await HandleExceptionAsync(context, exception);
+                if (exception != null)
+                {
+                    await HandleExceptionAsync(context, exception);
+                }
+
             }
         }
 
-        private async Task HandleExceptionAsync(HttpContext context, Exception ex = null)
+        private async Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
-            if (ex != null)
+            _logger.LogError(ex, "全局异常！！！");
+
+            var errorResult = new ErrorApiResult();
+            if (ex is FriendlyException appFriendlyException)
             {
-                var errorResult = new ErrorApiResult();
-                if (ex is FriendlyException appFriendlyException)
-                {
-                    errorResult.ErrorCode = appFriendlyException.ErrorCode;
-                    errorResult.Message = appFriendlyException.Message;
-                }
-                else
-                {
-                    errorResult.ErrorCode = context.Response.StatusCode;
-                    errorResult.Message = ex.Message;
-                }
-                await WriteResponse(context, errorResult);
+                errorResult.ErrorCode = appFriendlyException.ErrorCode;
+                errorResult.Message = appFriendlyException.Message;
             }
             else
             {
-                var code = context.Response.StatusCode;
-                switch (code)
-                {
-                    case 200:
-                        return;
-
-                    case 204:
-                        return;
-
-                    case 401:
-                        await WriteResponse(context, new ErrorApiResult(code, "token已过期,请重新登录"));
-                        break;
-
-                    default:
-                        await WriteResponse(context, new ErrorApiResult(code, "未知错误"));
-                        break;
-                }
+                errorResult.ErrorCode = context.Response.StatusCode;
+                errorResult.Message = ex.Message;
             }
+            await WriteResponse(context, errorResult);
         }
 
         private async Task WriteResponse(HttpContext context, ErrorApiResult errorResult)
