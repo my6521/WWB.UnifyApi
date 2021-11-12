@@ -17,6 +17,7 @@ namespace WWB.UnifyApi.Models
     public class ApiResult : ApiResult<object>
     {
     }
+   
 
     public class ErrorApiResult : ApiResult
     {
@@ -33,4 +34,6 @@ namespace WWB.UnifyApi.Models
             ErrorCode = code;
         }
     }
+
+  
 }
