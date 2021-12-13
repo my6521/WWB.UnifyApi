@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WWB.UnifyApi.Attributes
 {
@@ -15,11 +12,19 @@ namespace WWB.UnifyApi.Attributes
         {
             if (!context.ModelState.IsValid)
             {
-                var message = string.Empty;
-                using var enumerator = context.ModelState.Keys.GetEnumerator();
-                if (enumerator.MoveNext())
-                    message = enumerator.Current + ":参数有误！";
-                throw new ArgumentNullException(message);
+                var str = new StringBuilder();
+                foreach (var item in context.ModelState.Values)
+                {
+                    //遍历所有项目的中的所有错误信息
+                    foreach (var err in item.Errors)
+                    {
+                        //消息拼接,用|隔开，前端根据容易解析
+                        if (str.Length > 0) str.Append(",");
+                        str.Append(err.ErrorMessage);
+                    }
+                }
+
+                throw new ArgumentNullException(str.ToString());
             }
             base.OnActionExecuting(context);
         }
