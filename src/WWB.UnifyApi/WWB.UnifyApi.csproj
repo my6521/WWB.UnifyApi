@@ -9,6 +9,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/my6521/WWB.UnifyApi</RepositoryUrl>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageVersion>1.0.8</PackageVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
