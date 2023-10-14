@@ -72,10 +72,10 @@ namespace WWB.UnifyApi.Attributes
             {
                 Path = path,
                 Method = method,
-                Ip = ip,
+                IpAddress = ip,
                 Browser = browser,
-                Param = paramStr,
-                Result = result,
+                RequestParam = paramStr,
+                ResultParam = result,
                 CostTime = costTime,
                 ActionName = descriptor.ActionName,
                 ControllerName = descriptor.ControllerName,
@@ -96,14 +96,14 @@ namespace WWB.UnifyApi.Attributes
 
     public class OperateModel
     {
-        public string Path { get; internal set; }
-        public string Method { get; internal set; }
-        public string Ip { get; internal set; }
-        public string Browser { get; internal set; }
-        public string Param { get; internal set; }
-        public string Result { get; internal set; }
-        public double CostTime { get; internal set; }
         public string ActionName { get; internal set; }
         public string ControllerName { get; internal set; }
+        public string Path { get; internal set; }
+        public string Method { get; internal set; }
+        public string IpAddress { get; internal set; }
+        public string Browser { get; internal set; }
+        public string RequestParam { get; internal set; }
+        public string ResultParam { get; internal set; }
+        public double CostTime { get; internal set; }
     }
 }
