@@ -68,9 +68,8 @@ namespace WWB.UnifyApi.Attributes
             var ip = context.HttpContext?.Connection.RemoteIpAddress?.MapToIPv4()?.ToString();
             var browser = context.HttpContext?.Request.Headers["User-Agent"];
 
-            var opContext = new OperateContext()
+            var model = new OperateModel()
             {
-                Context = context,
                 Path = path,
                 Method = method,
                 Ip = ip,
@@ -82,7 +81,7 @@ namespace WWB.UnifyApi.Attributes
                 ControllerName = descriptor.ControllerName,
             };
 
-            Log(opContext);
+            Log(context, model);
         }
 
         public override sealed Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
@@ -90,14 +89,13 @@ namespace WWB.UnifyApi.Attributes
             return base.OnResultExecutionAsync(context, next);
         }
 
-        public virtual void Log(OperateContext context)
+        public virtual void Log(ActionContext context, OperateModel operateModel)
         {
         }
     }
 
-    public class OperateContext
+    public class OperateModel
     {
-        public ActionContext Context { get; internal set; }
         public string Path { get; internal set; }
         public string Method { get; internal set; }
         public string Ip { get; internal set; }
