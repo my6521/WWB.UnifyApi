@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WWB.UnifyApi.Attributes
 {
-    public abstract class OperateFilter : ActionFilterAttribute
+    public abstract class OperateActionFilter : ActionFilterAttribute
     {
         public override sealed void OnActionExecuting(ActionExecutingContext context)
         {
