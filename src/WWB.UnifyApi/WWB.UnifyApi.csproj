@@ -3,13 +3,14 @@
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<PackageId>WWB.UnifyApi</PackageId>
-		<Version>1.0.8</Version>
+		<Version>1.0.9</Version>
 		<Authors>my6521</Authors>
 		<Description>NetCore3.1</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/my6521/WWB.UnifyApi</RepositoryUrl>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<PackageVersion>1.0.8</PackageVersion>
+		<PackageVersion>1.0.9</PackageVersion>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
