@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WWB.UnifyApi
 {
+    /// <summary>
+    /// 友好异常
+    /// </summary>
     public class FriendlyException : Exception
     {
         public object ErrorCode { get; set; }

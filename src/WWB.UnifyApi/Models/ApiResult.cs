@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WWB.UnifyApi.Models
+﻿namespace WWB.UnifyApi.Models
 {
     public class ApiResult<T>
     {
@@ -17,7 +11,6 @@ namespace WWB.UnifyApi.Models
     public class ApiResult : ApiResult<object>
     {
     }
-   
 
     public class ErrorApiResult : ApiResult
     {
@@ -34,6 +27,4 @@ namespace WWB.UnifyApi.Models
             ErrorCode = code;
         }
     }
-
-  
 }

@@ -79,6 +79,7 @@ namespace WWB.UnifyApi.Attributes
                 CostTime = costTime,
                 ActionName = descriptor.ActionName,
                 ControllerName = descriptor.ControllerName,
+                StatusCode = context.HttpContext.Response.StatusCode
             };
 
             Log(context, model);
@@ -96,14 +97,54 @@ namespace WWB.UnifyApi.Attributes
 
     public class OperateModel
     {
+        /// <summary>
+        /// 方法名称
+        /// </summary>
         public string ActionName { get; internal set; }
+
+        /// <summary>
+        /// 控制器名称
+        /// </summary>
         public string ControllerName { get; internal set; }
+
+        /// <summary>
+        /// 请求路径
+        /// </summary>
         public string Path { get; internal set; }
+
+        /// <summary>
+        /// 请求方式
+        /// </summary>
         public string Method { get; internal set; }
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
         public string IpAddress { get; internal set; }
+
+        /// <summary>
+        /// 浏览器信息
+        /// </summary>
         public string Browser { get; internal set; }
+
+        /// <summary>
+        /// 请求参数
+        /// </summary>
         public string RequestParam { get; internal set; }
+
+        /// <summary>
+        /// 返回参数
+        /// </summary>
         public string ResultParam { get; internal set; }
+
+        /// <summary>
+        /// 消耗时间
+        /// </summary>
         public double CostTime { get; internal set; }
+
+        /// <summary>
+        /// 状态码
+        /// </summary>
+        public int StatusCode { get; internal set; }
     }
 }

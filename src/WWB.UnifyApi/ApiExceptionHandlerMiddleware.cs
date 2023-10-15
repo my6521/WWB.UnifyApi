@@ -7,6 +7,9 @@ using WWB.UnifyApi.Models;
 
 namespace WWB.UnifyApi
 {
+    /// <summary>
+    /// 全局异常中间件
+    /// </summary>
     public class ApiExceptionHandlerMiddleware
     {
         private readonly RequestDelegate _next;
@@ -35,7 +38,6 @@ namespace WWB.UnifyApi
                 {
                     await HandleExceptionAsync(context, exception);
                 }
-
             }
         }
 

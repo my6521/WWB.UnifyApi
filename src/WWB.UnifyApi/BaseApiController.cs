@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WWB.UnifyApi.Models;
 
 namespace WWB.UnifyApi
 {
+    /// <summary>
+    /// 控制器基类
+    /// </summary>
     [ApiController]
     [Route("api/[controller]/[action]")]
     public abstract class BaseApiController : ControllerBase

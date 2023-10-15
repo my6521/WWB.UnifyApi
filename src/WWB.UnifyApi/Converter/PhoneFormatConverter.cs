@@ -3,6 +3,9 @@ using System;
 
 namespace WWB.UnifyApi.Converter
 {
+    /// <summary>
+    /// 手机号掩码转换
+    /// </summary>
     public class PhoneFormatConverter : JsonConverter
     {
         public override bool CanRead { get; } = false;

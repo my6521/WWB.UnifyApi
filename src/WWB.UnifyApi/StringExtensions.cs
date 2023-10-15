@@ -5,6 +5,12 @@ namespace WWB.UnifyApi
 {
     public static class StringExtensions
     {
+        /// <summary>
+        /// 手机号掩码
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static string PhoneToAnonymous(this string phone)
         {
             if (string.IsNullOrWhiteSpace(phone))
